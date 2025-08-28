@@ -11,7 +11,7 @@ resource "segment_destination_subscription" "id-66cedf95000bb26c18781575_kWMoVbG
   name           = "Send Identify"
   reverse_etl_schedule = {
     config = jsonencode({
-      interval = "1h"
+      interval = "15m"
     })
     strategy = "PERIODIC"
   }
