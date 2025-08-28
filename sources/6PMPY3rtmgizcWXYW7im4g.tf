@@ -9,7 +9,7 @@ resource "segment_source" "id-6PMPY3rtmgizcWXYW7im4g" {
   metadata = {
     id = "BQp3zGUgjV"
   }
-  name = "Snowflake"
+  name = "Snowflake RETL"
   settings = jsonencode({
     account   = "VNB64696.us-west-2"
     database  = "SEGMENT_REVERSE_ETL"
