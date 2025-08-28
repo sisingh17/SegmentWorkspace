@@ -11,10 +11,10 @@ resource "segment_source" "id-6PMPY3rtmgizcWXYW7im4g" {
   }
   name = "Snowflake"
   settings = jsonencode({
-    account   = "ecb63470.prod3.us-west-2"
-    database  = "SISINGH_SANDBOX"
-    username  = "SISINGH"
-    warehouse = "SEGMENT_WAREHOUSE"
+    account   = "VNB64696.us-west-2"
+    database  = "SEGMENT_REVERSE_ETL"
+    username  = "segment_reverse_etl_user"
+    warehouse = "SEGMENT_REVERSE_ETL"
   })
   slug = "snowflake"
 }
