@@ -5,7 +5,7 @@ import {
 
 resource "segment_tracking_plan" "id-tp_3298IEo5kQ3o9YVQevMmKvBRtcK" {
   description = "description"
-  name        = "Untitled Tracking Plan"
+  name        = "DemoTrackingPlan"
   rules = [
     {
       json_schema = jsonencode({
