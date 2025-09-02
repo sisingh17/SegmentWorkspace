@@ -9,6 +9,27 @@ resource "segment_tracking_plan" "id-tp_2rFi56u1W4f8fcPxJ92padMtVPj" {
   rules = [
     {
       json_schema = jsonencode({
+        "$schema"   = "http://json-schema.org/draft-07/schema#"
+        description = "DO NOT EDIT. Event generated to store end users consent preferences for Unify and Twilio Engage."
+        properties = {
+          context = {
+            type = "object"
+          }
+          properties = {
+            type = "object"
+          }
+          traits = {
+            type = "object"
+          }
+        }
+        type = "object"
+      })
+      key     = "Segment Consent Preference Updated"
+      type    = "TRACK"
+      version = 1
+    },
+    {
+      json_schema = jsonencode({
         "$schema" = "http://json-schema.org/draft-07/schema#"
         properties = {
           context = {
@@ -84,6 +105,18 @@ resource "segment_tracking_plan" "id-tp_2rFi56u1W4f8fcPxJ92padMtVPj" {
         type = "object"
       })
       key     = "Product Added"
+      type    = "TRACK"
+      version = 1
+    },
+    {
+      json_schema = jsonencode({
+        properties = {
+          context    = {}
+          properties = {}
+          traits     = {}
+        }
+      })
+      key     = "New Rule"
       type    = "TRACK"
       version = 1
     },
