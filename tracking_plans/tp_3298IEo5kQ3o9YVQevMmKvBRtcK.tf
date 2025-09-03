@@ -32,6 +32,63 @@ resource "segment_tracking_plan" "id-tp_3298IEo5kQ3o9YVQevMmKvBRtcK" {
       json_schema = jsonencode({
         "$schema" = "http://json-schema.org/draft-07/schema#"
         properties = {
+          anonymousId = {
+            type = "string"
+          }
+          context = {
+            properties = {
+              device = {
+                properties = {
+                  advertisingId = {
+                    type = "string"
+                  }
+                }
+                required = ["advertisingId"]
+                type     = "object"
+              }
+            }
+            required = ["device"]
+            type     = "object"
+          }
+          properties = {
+            properties = {
+              primary_business_unit = {
+                type = "string"
+              }
+            }
+            required = ["primary_business_unit"]
+            type     = "object"
+          }
+          traits = {
+            properties = {
+              email = {
+                type = "string"
+              }
+              first_name = {
+                type = "string"
+              }
+              last_name = {
+                type = "string"
+              }
+            }
+            required = ["email"]
+            type     = "object"
+          }
+          userId = {
+            type = "string"
+          }
+        }
+        required = ["context", "anonymousId", "userId", "traits"]
+        type     = "object"
+      })
+      key     = null
+      type    = "COMMON"
+      version = 1
+    },
+    {
+      json_schema = jsonencode({
+        "$schema" = "http://json-schema.org/draft-07/schema#"
+        properties = {
           context = {}
           properties = {
             properties = {
