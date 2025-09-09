@@ -5,11 +5,11 @@ import {
 
 resource "segment_transformation" "id-329B6N34SpL9S0QbWlP6QBFOPQp" {
   destination_metadata_id = null
-  enabled                 = false
+  enabled                 = true
   fql_defined_properties = [
   ]
   if             = "event=\"Example Event\""
-  name           = "Test Transformation"
+  name           = "Rename Example Event"
   new_event_name = "New Example Event"
   property_renames = [
   ]
