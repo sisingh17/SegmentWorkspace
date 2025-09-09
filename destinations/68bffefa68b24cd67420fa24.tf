@@ -14,8 +14,14 @@ resource "segment_destination" "id-68bffefa68b24cd67420fa24" {
   }
   name = "Braze Cloud Mode (Actions)"
   settings = jsonencode({
-    api_key  = ""
-    app_id   = ""
+    api_key = "••••••••••29c6"
+    app_id  = "82385319-73a5-422b-8efe-7201782e29c6"
+    dynamicAuthSettings = {
+      configId = "68bffefa68b24cd67420fa24"
+      oauth = {
+        type = "noAuth"
+      }
+    }
     endpoint = "https://rest.iad-01.braze.com"
   })
   source_id = "mGfJH44XzwfN7eHA3NdiDf"
