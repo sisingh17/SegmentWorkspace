@@ -4,7 +4,7 @@ import {
 }
 
 resource "segment_destination" "id-68bffbf89e7a3e912e1dede8" {
-  enabled = false
+  enabled = true
   metadata = {
     contacts          = null
     id                = "614a3c7d791c91c41bae7599"
@@ -14,6 +14,12 @@ resource "segment_destination" "id-68bffbf89e7a3e912e1dede8" {
   }
   name = "Webhooks (Actions)"
   settings = jsonencode({
+    dynamicAuthSettings = {
+      configId = "68bffbf89e7a3e912e1dede8"
+      oauth = {
+        type = "noAuth"
+      }
+    }
     sharedSecret = ""
   })
   source_id = "mGfJH44XzwfN7eHA3NdiDf"
