@@ -22,7 +22,7 @@ resource "segment_destination" "id-68bffefa68b24cd67420fa24" {
         type = "noAuth"
       }
     }
-    endpoint = "https://rest.iad-01.braze.com"
+    endpoint = "https://rest.iad-03.braze.com"
   })
   source_id = "mGfJH44XzwfN7eHA3NdiDf"
 }
