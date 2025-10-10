@@ -17,8 +17,14 @@ resource "segment_destination" "id-68e8e6f74e9fcf0225ced7e0" {
   }
   name = "Google Ads Conversions"
   settings = jsonencode({
-    conversionTrackingId = ""
-    customerId           = ""
+    conversionTrackingId = "16586692456"
+    customerId           = "174-736-9994"
+    dynamicAuthSettings = {
+      configId = "68e8e6f74e9fcf0225ced7e0"
+      oauth = {
+        type = "noAuth"
+      }
+    }
   })
   source_id = "mGfJH44XzwfN7eHA3NdiDf"
 }
