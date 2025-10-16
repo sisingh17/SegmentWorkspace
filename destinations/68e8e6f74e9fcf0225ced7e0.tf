@@ -18,7 +18,7 @@ resource "segment_destination" "id-68e8e6f74e9fcf0225ced7e0" {
   name = "Google Ads Conversions"
   settings = jsonencode({
     conversionTrackingId = "16586692456"
-    customerId           = "1747369994"
+    customerId           = "2313397280"
     dynamicAuthSettings = {
       configId = "68e8e6f74e9fcf0225ced7e0"
       oauth = {
