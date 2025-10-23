@@ -5,7 +5,7 @@ import {
 
 resource "segment_transformation" "id-329B6N34SpL9S0QbWlP6QBFOPQp" {
   destination_metadata_id = null
-  enabled                 = true
+  enabled                 = false
   fql_defined_properties = [
   ]
   if             = "event=\"Example Event\""
