@@ -14,7 +14,7 @@ resource "segment_destination" "id-6909e84856b8ab698f4c9016" {
   }
   name = "New Relic Test"
   settings = jsonencode({
-    accountId        = ""
+    accountId        = "7322951"
     defaultEventType = ""
     events           = {}
     insertKey        = "••••••••••4HFL"
