@@ -17,7 +17,7 @@ resource "segment_destination" "id-6909e84856b8ab698f4c9016" {
     accountId        = ""
     defaultEventType = ""
     events           = {}
-    insertKey        = ""
+    insertKey        = "••••••••••4HFL"
     region           = "EU"
     sendContext      = false
     sendIds          = false
