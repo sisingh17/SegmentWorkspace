@@ -1,0 +1,21 @@
+import {
+  to = segment_destination.id-692587106e1a89cee4b82e9e
+  id = "692587106e1a89cee4b82e9e"
+}
+
+resource "segment_destination" "id-692587106e1a89cee4b82e9e" {
+  enabled = false
+  metadata = {
+    contacts          = null
+    id                = "5850d8b680412f644ff55df2"
+    partner_owned     = false
+    region_endpoints  = ["US", "EU"]
+    supported_regions = null
+  }
+  name = "Test US_EU"
+  settings = jsonencode({
+    endpoint   = "https://api.segment.io"
+    repeatKeys = []
+  })
+  source_id = "8MT9TFAJzDfUxTat4GhnxC"
+}
