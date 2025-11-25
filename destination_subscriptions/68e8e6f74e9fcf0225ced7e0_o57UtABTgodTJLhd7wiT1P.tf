@@ -74,9 +74,6 @@ resource "segment_destination_subscription" "id-68e8e6f74e9fcf0225ced7e0_o57UtAB
     mobile_advertising_id = {
       "@path" = "$.context.device.advertisingId"
     }
-    phone = {
-      "@path" = "$.properties.PHONE"
-    }
   })
   trigger = "context.personas.event_emitter_id = \"ee_33s9u3uJEcblQhutRQprTXskQGn\""
 }
