@@ -6,7 +6,7 @@ import {
 resource "segment_destination_subscription" "id-68e8e6f74e9fcf0225ced7e0_upUq1aAuELajJPtVbSrc62" {
   action_id            = "3MxuLcLqv1XvQS8iWuX3xZ"
   destination_id       = "68e8e6f74e9fcf0225ced7e0"
-  enabled              = false
+  enabled              = true
   model_id             = null
   name                 = "Customer Match User List - Accounts matches a"
   reverse_etl_schedule = null
