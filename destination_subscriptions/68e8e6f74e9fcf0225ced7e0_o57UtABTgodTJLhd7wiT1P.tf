@@ -51,9 +51,6 @@ resource "segment_destination_subscription" "id-68e8e6f74e9fcf0225ced7e0_o57UtAB
     ad_personalization_consent_state = "GRANTED"
     ad_user_data_consent_state       = "GRANTED"
     batch_size                       = 10000
-    crm_id = {
-      "@path" = "$.userId"
-    }
     email = {
       "@path" = "$.properties.email"
     }
