@@ -4,7 +4,7 @@ import {
 }
 
 resource "segment_destination" "id-69394149f28c4a7c390d25e0" {
-  enabled = false
+  enabled = true
   metadata = {
     contacts          = null
     id                = "614a3c7d791c91c41bae7599"
@@ -14,6 +14,12 @@ resource "segment_destination" "id-69394149f28c4a7c390d25e0" {
   }
   name = "Test Relay"
   settings = jsonencode({
+    dynamicAuthSettings = {
+      configId = "69394149f28c4a7c390d25e0"
+      oauth = {
+        type = "noAuth"
+      }
+    }
     sharedSecret = ""
   })
   source_id = "8MT9TFAJzDfUxTat4GhnxC"
