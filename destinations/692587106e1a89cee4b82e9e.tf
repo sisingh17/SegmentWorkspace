@@ -15,7 +15,7 @@ resource "segment_destination" "id-692587106e1a89cee4b82e9e" {
   name = "Test US_EU"
   settings = jsonencode({
     endpoint   = "https://api.segment.io"
-    repeatKeys = ["iEAGFmMBEC8ekUWiGB9QPyk1eMr7JM3d", "2xjMSVOq0KlLdDlyHFF29XPgHPI2rf3m"]
+    repeatKeys = ["iEAGFmMBEC8ekUWiGB9QPyk1eMr7JM3d", "2xjMSVOq0KlLdDlyHFF29XPgHPI2rf3m", "59vlXBcTD6grE5EVuQPOz76orjZDePlK"]
   })
   source_id = "8MT9TFAJzDfUxTat4GhnxC"
 }
