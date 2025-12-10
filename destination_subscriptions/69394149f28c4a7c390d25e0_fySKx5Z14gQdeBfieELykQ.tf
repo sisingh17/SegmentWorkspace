@@ -16,7 +16,7 @@ resource "segment_destination_subscription" "id-69394149f28c4a7c390d25e0_fySKx5Z
       "@path" = "$."
     }
     method = "POST"
-    url    = "https://fn.eu1.segmentapis.com/?b=N1VDNzU5dFB4NFJVY01BQmdCVXJ6Vzo6bVp4Y041eUhMb05aTVllamd2UFRkOHJmaEZmOEtoWjM="
+    url    = "https://fn.eu1.segmentapis.com/?b=dzhRVHpEYW5ldmtOWGpGSzQxdXhLczo6QXhOaUI3OGExdk9JRnVzVzRvSWdkbUNKNFJVWGd3UVU="
   })
   trigger = "type = \"track\""
 }
