@@ -18,5 +18,5 @@ resource "segment_destination_subscription" "id-69394149f28c4a7c390d25e0_fySKx5Z
     method = "POST"
     url    = "https://fn.eu1.segmentapis.com/?b=dzhRVHpEYW5ldmtOWGpGSzQxdXhLczo6QXhOaUI3OGExdk9JRnVzVzRvSWdkbUNKNFJVWGd3UVU="
   })
-  trigger = "type = \"track\""
+  trigger = "type = \"track\" or type = \"identify\" or type = \"group\" or type = \"page\""
 }
