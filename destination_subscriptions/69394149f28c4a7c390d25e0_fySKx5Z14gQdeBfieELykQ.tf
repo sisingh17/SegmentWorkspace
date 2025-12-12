@@ -13,11 +13,17 @@ resource "segment_destination_subscription" "id-69394149f28c4a7c390d25e0_fySKx5Z
   settings = jsonencode({
     batch_keys = ["url", "method", "headers"]
     data = {
-      "@path" = "$."
-    }
-    headers = {
       address = {
         "@path" = "$.__segment_entities.testing.profile_traits_flattened.ADDRESS"
+      }
+      email = {
+        "@path" = "$.email"
+      }
+      type = {
+        "@path" = "$.type"
+      }
+      userId = {
+        "@path" = "$.userId"
       }
     }
     method = "POST"
