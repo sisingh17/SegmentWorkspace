@@ -15,6 +15,11 @@ resource "segment_destination_subscription" "id-69394149f28c4a7c390d25e0_fySKx5Z
     data = {
       "@path" = "$."
     }
+    headers = {
+      address = {
+        "@path" = "$.__segment_entities.testing.profile_traits_flattened.ADDRESS"
+      }
+    }
     method = "POST"
     url    = "https://fn.eu1.segmentapis.com/?b=cHpNZzRuUVJ4Rzc1QmRKaUNtcHdqNDo6dVg5Y0lYU2NKdVpkbDNOWkwzNENDYzBVdXp1NlgxSVU="
   })
