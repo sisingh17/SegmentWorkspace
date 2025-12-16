@@ -10,10 +10,8 @@ resource "segment_destination_subscription" "id-693c03a595e5c19a4b3aad8a_qrruokk
   model_id       = "kuCKxr8q4DmEogGF8NfJ1p"
   name           = "Entity subscription"
   reverse_etl_schedule = {
-    config = jsonencode({
-      interval = "4h"
-    })
-    strategy = "PERIODIC"
+    config   = null
+    strategy = "MANUAL"
   }
   settings = jsonencode({})
   trigger  = "event = \"new\" or event = \"updated\" or event = \"deleted\""
