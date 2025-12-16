@@ -6,7 +6,7 @@ import {
 resource "segment_destination_subscription" "id-693c03a595e5c19a4b3aad8a_qrruokkvpPZyCAXkY35WJZ" {
   action_id      = "dmxYnywNgdWzgRuyazhi6C"
   destination_id = "693c03a595e5c19a4b3aad8a"
-  enabled        = true
+  enabled        = false
   model_id       = "kuCKxr8q4DmEogGF8NfJ1p"
   name           = "Entity subscription"
   reverse_etl_schedule = {
