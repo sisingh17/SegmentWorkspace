@@ -17,7 +17,7 @@ resource "segment_destination_subscription" "id-69394149f28c4a7c390d25e0_fySKx5Z
         "@path" = "$.__segment_entities.testing.profile_traits_flattened.ADDRESS"
       }
       email = {
-        "@path" = "$.email"
+        "@path" = "$.traits.email"
       }
       type = {
         "@path" = "$.type"
