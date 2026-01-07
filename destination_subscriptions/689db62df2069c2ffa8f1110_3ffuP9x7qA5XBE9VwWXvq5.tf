@@ -6,7 +6,7 @@ import {
 resource "segment_destination_subscription" "id-689db62df2069c2ffa8f1110_3ffuP9x7qA5XBE9VwWXvq5" {
   action_id            = "nFPnRozhz1mh4Gbx4MLvT5"
   destination_id       = "689db62df2069c2ffa8f1110"
-  enabled              = true
+  enabled              = false
   model_id             = null
   name                 = "Example Event"
   reverse_etl_schedule = null
