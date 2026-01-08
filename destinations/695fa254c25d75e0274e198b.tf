@@ -40,7 +40,7 @@ resource "segment_destination" "id-695fa254c25d75e0274e198b" {
     secretKey                        = ""
     sendAlias                        = false
     sendToBatchEndpoint              = false
-    trackAllPages                    = false
+    trackAllPages                    = true
     trackAllPagesV2                  = false
     trackCategorizedPages            = true
     trackGclid                       = false
