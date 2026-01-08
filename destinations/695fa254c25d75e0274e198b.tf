@@ -23,7 +23,7 @@ resource "segment_destination" "id-695fa254c25d75e0274e198b" {
   }
   name = "Amplitude Device Mode"
   settings = jsonencode({
-    apiKey                           = ""
+    apiKey                           = "••••••••••1036"
     appendFieldsToEventProps         = {}
     batchEvents                      = false
     deviceIdFromUrlParam             = false
