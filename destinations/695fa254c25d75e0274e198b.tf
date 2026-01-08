@@ -28,7 +28,7 @@ resource "segment_destination" "id-695fa254c25d75e0274e198b" {
     batchEvents                      = false
     deviceIdFromUrlParam             = false
     enableLocationListening          = true
-    endpoint                         = ""
+    endpoint                         = "https://api.amplitude.com"
     eventUploadPeriodMillis          = 30000
     eventUploadThreshold             = 30
     forceHttps                       = false
