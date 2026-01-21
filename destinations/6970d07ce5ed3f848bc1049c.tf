@@ -14,7 +14,7 @@ resource "segment_destination" "id-6970d07ce5ed3f848bc1049c" {
   }
   name = "GTM Consent Testing"
   settings = jsonencode({
-    containerId           = "GTM-KWMM9WPJ"
+    containerId           = "GTM-PBLMR6M3"
     environment           = ""
     trackAllPages         = true
     trackCategorizedPages = false
