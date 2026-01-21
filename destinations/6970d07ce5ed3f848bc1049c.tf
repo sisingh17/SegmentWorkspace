@@ -16,7 +16,7 @@ resource "segment_destination" "id-6970d07ce5ed3f848bc1049c" {
   settings = jsonencode({
     containerId           = "GTM-KWMM9WPJ"
     environment           = ""
-    trackAllPages         = false
+    trackAllPages         = true
     trackCategorizedPages = false
     trackNamedPages       = false
   })
