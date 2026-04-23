@@ -18,7 +18,7 @@ resource "segment_destination" "id-69e9dbec4a06895e7588b944" {
   name = "OneSignal (New)"
   settings = jsonencode({
     apiKey = "••••••••••4acy"
-    appId  = ""
+    appId  = "b1af2d84-6dfd-4fd3-af8c-646b4773900c"
   })
   source_id = "mGfJH44XzwfN7eHA3NdiDf"
 }
