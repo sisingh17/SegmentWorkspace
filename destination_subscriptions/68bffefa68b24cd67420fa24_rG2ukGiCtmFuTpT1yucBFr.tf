@@ -6,7 +6,7 @@ import {
 resource "segment_destination_subscription" "id-68bffefa68b24cd67420fa24_rG2ukGiCtmFuTpT1yucBFr" {
   action_id            = "3pnc4QJvUjWGi2bp6EnDt"
   destination_id       = "68bffefa68b24cd67420fa24"
-  enabled              = false
+  enabled              = true
   model_id             = null
   name                 = "Track Event - Profile enters audience"
   reverse_etl_schedule = null
