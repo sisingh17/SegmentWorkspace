@@ -4,7 +4,7 @@ import {
 }
 
 resource "segment_destination" "id-6a340547095f18585d2e11c7" {
-  enabled = false
+  enabled = true
   metadata = {
     contacts = [
       {
@@ -15,10 +15,16 @@ resource "segment_destination" "id-6a340547095f18585d2e11c7" {
     region_endpoints  = ["US"]
     supported_regions = ["us-west-2", "eu-west-1"]
   }
-  name = "SendGrid"
+  name = "UnifyDemoSpace_Sendgrid_Dest"
   settings = jsonencode({
+    dynamicAuthSettings = {
+      configId = "6a340547095f18585d2e11c7"
+      oauth = {
+        type = "noAuth"
+      }
+    }
     endpoint       = "https://api.sendgrid.com"
-    sendGridApiKey = ""
+    sendGridApiKey = "••••••••••8VnM"
   })
   source_id = "csDfmZ7LdFdHnFMVyFWbHX"
 }
