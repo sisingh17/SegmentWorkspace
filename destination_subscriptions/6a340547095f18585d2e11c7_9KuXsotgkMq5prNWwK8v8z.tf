@@ -6,7 +6,7 @@ import {
 resource "segment_destination_subscription" "id-6a340547095f18585d2e11c7_9KuXsotgkMq5prNWwK8v8z" {
   action_id            = "rL5tHuZt3nvQLqn7oXeFhC"
   destination_id       = "6a340547095f18585d2e11c7"
-  enabled              = false
+  enabled              = true
   model_id             = null
   name                 = "Upsert Contact"
   reverse_etl_schedule = null
@@ -224,5 +224,5 @@ resource "segment_destination_subscription" "id-6a340547095f18585d2e11c7_9KuXsot
       }
     }
   })
-  trigger = "event = \"\""
+  trigger = "type = \"identify\""
 }
