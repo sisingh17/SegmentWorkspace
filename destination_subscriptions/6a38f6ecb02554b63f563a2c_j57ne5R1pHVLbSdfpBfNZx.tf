@@ -66,7 +66,7 @@ resource "segment_destination_subscription" "id-6a38f6ecb02554b63f563a2c_j57ne5R
         }
       }
     }
-    enable_batching = true
+    enable_batching = false
     external_id = {
       "@if" = {
         else = {
@@ -224,5 +224,5 @@ resource "segment_destination_subscription" "id-6a38f6ecb02554b63f563a2c_j57ne5R
       }
     }
   })
-  trigger = "event = \"\""
+  trigger = "type = \"identify\""
 }
