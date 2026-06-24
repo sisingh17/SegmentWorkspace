@@ -14,7 +14,7 @@ resource "segment_destination" "id-6a3bb0bf5545d427ab4ae96f" {
   }
   name = "One Signal Test (Simran Internal)"
   settings = jsonencode({
-    oneSignalAppId      = ""
+    oneSignalAppId      = "b1af2d84-6dfd-4fd3-af8c-646b4773900c"
     oneSignalRestApiKey = ""
   })
   source_id = "csDfmZ7LdFdHnFMVyFWbHX"
