@@ -12,6 +12,14 @@ resource "segment_function" "id-dfn_6a3b9fa84096face0430f6ed" {
   settings = [
     {
       description = ""
+      label       = "Use as:"
+      name        = "useAs"
+      required    = false
+      sensitive   = false
+      type        = "ARRAY"
+    },
+    {
+      description = ""
       label       = "oneSignalAppId"
       name        = "oneSignalAppId"
       required    = true
