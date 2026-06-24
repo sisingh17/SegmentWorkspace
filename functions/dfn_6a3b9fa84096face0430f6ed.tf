@@ -4,20 +4,12 @@ import {
 }
 
 resource "segment_function" "id-dfn_6a3b9fa84096face0430f6ed" {
-  code          = "/**\n * Segment Destination Function: Support Journeys & Audiences\n */\nasync function onTrack(event, settings) {\n\tconst appId = settings.oneSignalAppId;\n\tconst endpoint = `https://api.onesignal.com/apps/$${appId}/users`;\n\n\tconst externalId = event.properties?.objectid;\n\tconst userEmail = event.properties?.email || event.context?.traits?.email;\n\n\t// 2. Build the payload\n\tconst payload = {\n\t\tproperties: {\n\t\t\ttags: {\n\t\t\t\tjourney_name: event.properties?.journey_metadata?.journey_name,\n\t\t\t\taudience_key: event.properties?.audience_key,\n\t\t\t\t// Include the dynamic audience boolean (e.g., nasser_live: true)\n\t\t\t\t...(event.properties?.audience_key\n\t\t\t\t\t? {\n\t\t\t\t\t\t\t[event.properties.audience_key]:\n\t\t\t\t\t\t\t\tevent.properties[event.properties.audience_key]\n\t\t\t\t\t\t}\n\t\t\t\t\t: {}),\n\t\t\t\t...event.properties\n\t\t\t},\n\t\t\tlanguage: event.context?.locale || 'en'\n\t\t},\n\t\tidentity: {\n\t\t\texternal_id: externalId\n\t\t}\n\t};\n\n\t// 3. Add Email if it exists\n\tif (userEmail) {\n\t\tpayload.subscriptions = [\n\t\t\t{ type: 'Email', token: userEmail, enabled: true }\n\t\t];\n\t}\n\n\tconst response = await fetch(endpoint, {\n\t\tmethod: 'POST',\n\t\theaders: {\n\t\t\t'Content-Type': 'application/json',\n\t\t\tAuthorization: `Basic $${settings.oneSignalRestApiKey}`\n\t\t},\n\t\tbody: JSON.stringify(payload)\n\t});\n\n\tif (!response.ok) {\n\t\tthrow new Error(\n\t\t\t`OneSignal Error: $${response.status} - $${await response.text()}`\n\t\t);\n\t}\n\n\treturn await response.json();\n}\n"
+  code          = "/**\n * Segment Destination Function: Support Journeys & Audiences\n */\nasync function onTrack(event, settings) {\n\tconst appId = settings.oneSignalAppId;\n\tconst endpoint = `https://api.onesignal.com/apps/$${appId}/users`;\n\n\tconst externalId = event.properties?.objectid;\n\tconst userEmail = event.properties?.email || event.context?.traits?.email;\n\n\t// 1. Check the destination type setting\n\tconst destinationType = settings.usedAsADestinationTo?.toLowerCase();\n\n\t// 2. Start with a catch-all for ALL incoming properties\n\tconst tags = {\n\t\t...event.properties\n\t};\n\n\t// 3. Apply selective logic based on configuration mode OR exit gracefully\n\tif (destinationType === 'journey') {\n\t\t// Ensure journey_name is explicitly set at the top level\n\t\tif (event.properties?.journey_metadata?.journey_name) {\n\t\t\ttags.journey_name = event.properties.journey_metadata.journey_name;\n\t\t}\n\n\t\t// Clean up audience fields so they don't bleed into a Journey destination\n\t\tdelete tags.audience_key;\n\t} else if (destinationType === 'audience') {\n\t\tif (event.properties?.audience_key) {\n\t\t\tconst audienceKey = event.properties.audience_key;\n\n\t\t\t// Ensure the single dynamic boolean tag is explicitly set\n\t\t\tif (event.properties[audienceKey] !== undefined) {\n\t\t\t\ttags[audienceKey] = event.properties[audienceKey];\n\t\t\t}\n\n\t\t\t// Clean up the descriptive metadata fields so you only keep the boolean status\n\t\t\tdelete tags.audience_key;\n\t\t\tdelete tags.journey_metadata;\n\t\t}\n\t} else {\n\t\t// Graceful exit: Log the misconfiguration to Segment console and stop execution\n\t\tconsole.log(\n\t\t\t`Skipping event. 'usedAsADestinationTo' setting must be 'audience' or 'journey'. Found: '$${settings.usedAsADestinationTo}'`\n\t\t);\n\t\treturn;\n\t}\n\n\t// 4. Build the final payload\n\tconst payload = {\n\t\tproperties: {\n\t\t\ttags: tags,\n\t\t\tlanguage: event.context?.locale || 'en'\n\t\t},\n\t\tidentity: {\n\t\t\texternal_id: externalId\n\t\t}\n\t};\n\n\t// 5. Add Email if it exists\n\tif (userEmail) {\n\t\tpayload.subscriptions = [\n\t\t\t{ type: 'Email', token: userEmail, enabled: true }\n\t\t];\n\t}\n\n\tconst response = await fetch(endpoint, {\n\t\tmethod: 'POST',\n\t\theaders: {\n\t\t\t'Content-Type': 'application/json',\n\t\t\tAuthorization: `Basic $${settings.oneSignalRestApiKey}`\n\t\t},\n\t\tbody: JSON.stringify(payload)\n\t});\n\n\tif (!response.ok) {\n\t\tthrow new Error(\n\t\t\t`OneSignal Error: $${response.status} - $${await response.text()}`\n\t\t);\n\t}\n\n\treturn await response.json();\n}\n"
   description   = null
   display_name  = null
   logo_url      = "https://cdn-devcenter.segment.com/2e87e186-3bca-4d55-b93b-97705deb2a73.svg"
   resource_type = "DESTINATION"
   settings = [
-    {
-      description = ""
-      label       = "Use as:"
-      name        = "useAs"
-      required    = false
-      sensitive   = false
-      type        = "ARRAY"
-    },
     {
       description = ""
       label       = "oneSignalAppId"
@@ -30,6 +22,14 @@ resource "segment_function" "id-dfn_6a3b9fa84096face0430f6ed" {
       description = ""
       label       = "oneSignalRestApiKey"
       name        = "oneSignalRestApiKey"
+      required    = true
+      sensitive   = false
+      type        = "STRING"
+    },
+    {
+      description = "Based on whether you are connecting it to an Audience or Journey, type in \"Audience\" or \"Journey\" below"
+      label       = "Used as a destination to:"
+      name        = "usedAsADestinationTo"
       required    = true
       sensitive   = false
       type        = "STRING"
