@@ -4,7 +4,7 @@ import {
 }
 
 resource "segment_destination" "id-6a467f71cc8b1c5811a4f48e" {
-  enabled = false
+  enabled = true
   metadata = {
     contacts          = null
     id                = "6a467f398821c242726df2d4"
