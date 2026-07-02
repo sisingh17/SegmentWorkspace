@@ -14,7 +14,7 @@ resource "segment_destination" "id-6a467f71cc8b1c5811a4f48e" {
   }
   name = "Vero Destination Function (Simran Internal)"
   settings = jsonencode({
-    veroAuthToken = ""
+    veroAuthToken = "••••••••••OWQz"
   })
   source_id = "hWwGoDVBrvVXXEcSMAqJSX"
 }
