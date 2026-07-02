@@ -4,7 +4,7 @@ import {
 }
 
 resource "segment_destination" "id-68f0b8ec5d75283166a09cd6" {
-  enabled = true
+  enabled = false
   metadata = {
     contacts          = null
     id                = "5a6b50f1c900fa00011858fd"
@@ -14,7 +14,7 @@ resource "segment_destination" "id-68f0b8ec5d75283166a09cd6" {
   }
   name = "Google Ads Remarketing Lists"
   settings = jsonencode({
-    account             = "2313397280"
+    account             = ""
     accountResourceName = "customers/2313397280/customerClients/2313397280"
     adPersonalization   = ""
     adUserData          = ""
