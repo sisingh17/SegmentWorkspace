@@ -16,7 +16,7 @@ resource "segment_destination" "id-6a4645eece2ffc60348177bc" {
   settings = jsonencode({
     segmentAccessToken = ""
     segmentSpaceId     = ""
-    veroAuthToken      = ""
+    veroAuthToken      = "OTk1MDRmZWExN2Q5YjcwODA1ZTQ3MGE2NzJhZjFjNWI2MDhlYjg4ZjozODUzNzJlMjMwOWQ2NTg0NTQyNDUwMmM0NzQwN2ZlNDJiM2ZmOWQz"
   })
   source_id = "hWwGoDVBrvVXXEcSMAqJSX"
 }
