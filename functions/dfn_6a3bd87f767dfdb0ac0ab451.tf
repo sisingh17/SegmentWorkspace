@@ -12,22 +12,6 @@ resource "segment_function" "id-dfn_6a3bd87f767dfdb0ac0ab451" {
   settings = [
     {
       description = ""
-      label       = "segmentAccessToken"
-      name        = "segmentAccessToken"
-      required    = true
-      sensitive   = false
-      type        = "STRING"
-    },
-    {
-      description = ""
-      label       = "segmentSpaceId"
-      name        = "segmentSpaceId"
-      required    = true
-      sensitive   = false
-      type        = "STRING"
-    },
-    {
-      description = ""
       label       = "veroAuthToken"
       name        = "veroAuthToken"
       required    = true
