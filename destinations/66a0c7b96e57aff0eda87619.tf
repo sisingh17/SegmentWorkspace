@@ -4,7 +4,7 @@ import {
 }
 
 resource "segment_destination" "id-66a0c7b96e57aff0eda87619" {
-  enabled = true
+  enabled = false
   metadata = {
     contacts          = null
     id                = "5a4d24dcc5836400017188f6"
@@ -14,7 +14,7 @@ resource "segment_destination" "id-66a0c7b96e57aff0eda87619" {
   }
   name = "Personas Facebook Custom Audiences"
   settings = jsonencode({
-    account           = "act_794041057373779"
+    account           = "act_1506489116128966"
     specialAdCategory = ""
   })
   source_id = "csDfmZ7LdFdHnFMVyFWbHX"
