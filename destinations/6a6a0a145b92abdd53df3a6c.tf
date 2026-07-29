@@ -19,7 +19,13 @@ resource "segment_destination" "id-6a6a0a145b92abdd53df3a6c" {
   }
   name = "LinkedIn Audiences"
   settings = jsonencode({
-    ad_account_id              = ""
+    ad_account_id = "510987882"
+    dynamicAuthSettings = {
+      configId = "6a6a0a145b92abdd53df3a6c"
+      oauth = {
+        type = "noAuth"
+      }
+    }
     send_email                 = true
     send_google_advertising_id = true
   })
