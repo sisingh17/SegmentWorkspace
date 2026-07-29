@@ -4,7 +4,7 @@ import {
 }
 
 resource "segment_destination" "id-67b6fec7a888202d609f16fb" {
-  enabled = true
+  enabled = false
   metadata = {
     contacts          = null
     id                = "5a6b50f1c900fa00011858fd"
@@ -14,7 +14,7 @@ resource "segment_destination" "id-67b6fec7a888202d609f16fb" {
   }
   name = "Twilio Test(MCC Account)"
   settings = jsonencode({
-    account             = "2313397280"
+    account             = ""
     accountResourceName = "customers/2313397280/customerClients/2313397280"
     adPersonalization   = ""
     adUserData          = ""
