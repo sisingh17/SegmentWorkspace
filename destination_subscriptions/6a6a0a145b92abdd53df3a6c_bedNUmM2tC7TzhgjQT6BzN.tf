@@ -6,7 +6,7 @@ import {
 resource "segment_destination_subscription" "id-6a6a0a145b92abdd53df3a6c_bedNUmM2tC7TzhgjQT6BzN" {
   action_id            = "i9V1H1emvbxxNuwB5bdALx"
   destination_id       = "6a6a0a145b92abdd53df3a6c"
-  enabled              = false
+  enabled              = true
   model_id             = null
   name                 = "Sync To LinkedIn DMP Segment"
   reverse_etl_schedule = null
