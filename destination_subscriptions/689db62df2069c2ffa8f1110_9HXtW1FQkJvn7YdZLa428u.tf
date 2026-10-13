@@ -15,8 +15,12 @@ resource "segment_destination_subscription" "id-689db62df2069c2ffa8f1110_9HXtW1F
     data = {
       "@path" = "$."
     }
+    headers = {
+      Authorization = "Basic SDEzc2p6dmRvdlAxV0x4eHpMb1dCaW9LbWV3WXh3SGI6"
+      Content-Type  = "application/json"
+    }
     method = "POST"
-    url    = "https://webhook.site/2a09f3e3-f084-473b-bb20-05e19a37a21b"
+    url    = "https://api.segment.io/v1/track"
   })
   trigger = "type = \"track\""
 }
