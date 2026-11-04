@@ -13,23 +13,14 @@ resource "segment_destination_subscription" "id-69394149f28c4a7c390d25e0_kq6tZgY
   settings = jsonencode({
     batch_keys = ["url", "method", "headers"]
     data = {
-      traits = {
-        email = {
-          "@path" = "$.traits.email"
-        }
-        phone = {
-          "@path" = "$.__segment_entities.testing.profile_traits_le.PHONE"
-        }
-      }
-      type = {
-        "@path" = "$.type"
-      }
-      userId = {
-        "@path" = "$.userId"
-      }
+      "@path" = "$."
+    }
+    headers = {
+      Authorization = "Basic bWh5SWk0RlN6VkJVRlkwNG0yajBuQjYxWEFEbUd5TEM6"
+      Content-Type  = "application/json"
     }
     method = "POST"
-    url    = "https://fn.eu1.segmentapis.com/?b=cHpNZzRuUVJ4Rzc1QmRKaUNtcHdqNDo6dVg5Y0lYU2NKdVpkbDNOWkwzNENDYzBVdXp1NlgxSVU="
+    url    = "https://api.segment.io/v1/track"
   })
-  trigger = "type = \"identify\""
+  trigger = "type = \"track\""
 }
