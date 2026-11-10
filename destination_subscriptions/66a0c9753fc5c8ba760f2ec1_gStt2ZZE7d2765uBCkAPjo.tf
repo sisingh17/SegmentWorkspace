@@ -19,5 +19,5 @@ resource "segment_destination_subscription" "id-66a0c9753fc5c8ba760f2ec1_gStt2ZZ
     enable_batching = false
     method          = "POST"
   })
-  trigger = "event = \"\""
+  trigger = "type = \"identify\""
 }
